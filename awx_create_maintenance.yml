@@ -1,0 +1,21 @@
+--- 
+- hosts: "*"
+  become: false
+  gather_facts: false
+  tasks:
+
+  - name: Getting latest stuff from github repository
+    git:
+      # repo: git@github.com:athul76/zabbix_maintanence.git
+      repo: https://github.com/athul76/zabbix_maintanence.git
+      dest: /vision/awx-zabbix-maintenance-vi 
+      version: master
+      force: yes
+
+  - name: Changing perm of "set_maintenance.sh", adding "+x"
+    file: dest=/vision/awx_azvision_zabbix_maintenance/scripts/set_maintenance.sh mode=a+x
+
+  - name: run scripts locally on dcfra-vision-vi-deploy to read csv, set maintenance in Zabbix, log result and upload back to git repo
+    shell: /vision/awx-zabbix-maintenance-vi/scripts/set_maintenance.sh
+    args:
+        chdir: /vision/awx-zabbix-maintenance-vi/scripts/

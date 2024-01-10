@@ -1,13 +1,13 @@
 ##!/bin/bash
 #
 # set permission to folder to allow mariadb to write files here
-# chmod 777 /vision/awx-zabbix-maintenance-vi/logs
+# chmod 777 /repo/awx-zabbix-maintenance/logs
 
 # run maintenance script
-python3 /vision/awx-zabbix-maintenance-vi/scripts/setmaintenance.py 2> /vision/awx-zabbix-maintenance-vi/logs/maintenance_log.error
+python3 /repo/awx-zabbix-maintenance/scripts/setmaintenance.py 2> /repo/awx-zabbix-maintenance/logs/maintenance_log.error
 
 # push local repo back to git
-cd /vision/awx-zabbix-maintenance-vi
+cd /repo/awx-zabbix-maintenance
 git config --global user.name "AKG"
 git config --global user.email athul.76@gmail.com
 git add *

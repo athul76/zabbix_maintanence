@@ -1,4 +1,4 @@
-## written by Marcel Kragt & Nicklas Gehlen / lanufaktur GbR
+## written by Athul Krishnan
 ## Version 1.1
 
 import csv
@@ -7,9 +7,9 @@ import json
 import datetime
 
 # Editable
-ZabbixAPIURL = "http://dcfra-vision-vi-zabbix.sec.allianz/api_jsonrpc.php"
-ZabbixAPIUser = 'postman'
-ZabbixAPIPassword = 'Mera23Luna5'
+ZabbixAPIURL = "http://10.10.0.30/zabbix/api_jsonrpc.php"
+ZabbixAPIUser = 'apiuser'
+ZabbixAPIPassword = 'Admin_123'
 logPath = "../logs/maintenance_log.txt"
 zabbixHosts = []
 

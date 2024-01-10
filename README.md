@@ -1,1 +1,1 @@
-# zabbix_maintanence
+Set or Remove maintanence window for monitored devices by using a csv file.
